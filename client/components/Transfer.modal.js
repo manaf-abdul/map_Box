@@ -29,8 +29,8 @@ export default function AlertDialog(props) {
     const getData = async () => {
         try {
             const { data } = await Axios.get(`${BASEURL}/api/company`)
-            console.log(data)
-            setCompanies(data)
+            const filteredDocuments = data.filter((document) => document._id !== index);
+            setCompanies(filteredDocuments)
         } catch (error) {
             toast.error(error.message)
         }
@@ -51,9 +51,6 @@ export default function AlertDialog(props) {
                     Transfer User
                 </DialogTitle>
                 <DialogContent>
-                    {/* <DialogContentText id="alert-dialog-description">
-            Once you delete you can't recover the data
-          </DialogContentText> */}
                     <div className="container pt-1">
                         <p>Confirm the transfer of User : <b>{props?.selected?.firstName}</b></p>
                         <div className='pt-1 inputGroup'>
@@ -66,7 +63,7 @@ export default function AlertDialog(props) {
                                 onChange={(e) => setCompany(e.target.value)}
                             >
                                 <option selected>Choose the company</option>
-                                {companies && companies.length > 1 && companies.map(company => {
+                                {companies && companies.length > 0 && companies.map(company => {
                                     return (
                                         <option value={company._id}>{company.name}</option>
                                     )
@@ -77,15 +74,6 @@ export default function AlertDialog(props) {
                     </div>
                 </DialogContent>
                 <DialogActions>
-                    {/* <Button
-                        onClick={handleAddUser}
-                        className="col"
-                        size="large"
-                        type="primary"
-                        shape="round"
-                    >
-                        Transfer
-                    </Button> */}
                     <button className="btn btn-block btn-primary"
                         disabled={!company || company == "Choose the company"}
                         onClick={migrateHandler}>
