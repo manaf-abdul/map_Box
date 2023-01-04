@@ -12,7 +12,7 @@ INORDER TO RUN THE PROJECT:
 3. RUN NPM INSTALL. <br/>
 4. CD TO HOME DIRECTORY. <br/>
 5. RUN NPM INSTALL. <br/>
-6. CREATE A .env file with following credentials : <br/>
+6. CREATE A .env FILE WITH FOLLOWING CREDENTIALS : <br/>
     A.  DB_CONNECT  <br/>
     B.  PORT    <br/>
     C.  NODE_ENV    <br/>
