@@ -1,0 +1,29 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Task",
+        "description": "API in NodeJs using Swagger",
+        "contact": {
+            "email": "abdulmanafp1966@gmail.com"
+        },
+        "license": {
+            "url": "https://manaf-abdul.github.io/manafabdul/"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:5001",
+            "description": "Development Environment"
+        }
+    ],
+    "tags": [
+        {
+            "name": "User",
+            "description": ""
+        }
+    ],
+    "paths": {
+        
+    }
+}
